@@ -55,13 +55,13 @@
 		<section class="login-wrapper">
 			<div class="container">
 				<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
-					<form>
+					<form id="l-form">
 						<img class="img-responsive" alt="logo" src="img/logo.png">
-						<input type="text" class="form-control input-lg" placeholder="User Name">
-						<input type="password" class="form-control input-lg" placeholder="Password">
-						<label><a href="">Forget Password?</a></label>
-						<button type="submit" class="btn btn-primary">Login</button>
-						<p>Have't Any Account <a href="">Create An Account</a></p>
+						<input type="text" id="email" class="form-control input-lg" placeholder="Email" required>
+						<input type="password" id="password" class="form-control input-lg" placeholder="Password" required>
+						<label><a href="">¿Olvidaste la contraseña?</a></label>
+						<button id="btnlgn" type="submit"  class="btn btn-primary">Iniciar Sesión</button>
+						<p>¿No tienes una cuenta?<a href="register.html">Crear una cuenta.</a></p>
 					</form>
 				</div>
 			</div>
@@ -128,10 +128,10 @@
 			</div>
 		</footer>
 		 
-		<script type="text/javascript" src="js/jquery.min.js"></script>
+<!-- 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-		<script src="js/bootsnav.js"></script>
+		<script src="js/bootsnav.js"></script> -->
 		<script src="js/main.js"></script>
     </body>
 </html>
