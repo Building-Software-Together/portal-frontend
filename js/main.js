@@ -16,11 +16,9 @@ $(document).ready(function(){
 
 
 // Register Method
-
-
 function addUserIntoLocalStorage(username, email, password) {
-	// Almacenamos ahora los datos del usuario
 
+	// Almacenamos ahora los datos del usuario, los datos se pasan por los argumentos
 	localStorage.setItem("username", username);
 	localStorage.setItem("email", email);
 	localStorage.setItem("password", password);
@@ -29,20 +27,21 @@ function addUserIntoLocalStorage(username, email, password) {
 }
 
 
-const rForm = document.getElementById('r-form');
-
+const rForm = document.getElementById('r-form'); // obtenemos el id del formulario de registro
 try {
-	if(rForm) {
+	if(rForm) { // Si el id del formulario existe, crearemos un evento submit para agregar los datos al localStorage
 		rForm.addEventListener('submit', (event) => {
 		  event.preventDefault(); // Prevenimos que la pagina se recargue
 		  
+		  // Obtenemos los valores de los inputs
 		  const user = document.getElementById('username').value;
 		  const email = document.getElementById('email').value;
 		  const password = document.getElementById('password').value;
 		
+		  // Llamamos la funcion, que añade los datos al localStorage y le pasamos los datos que recibimos por input
 		  addUserIntoLocalStorage(user, email, password);
 		   
-		  window.location.href = 'index.html';
+		  window.location.href = 'index.html'; // Redirigimos al index
 		});
 	}
 } catch (error) {
@@ -59,9 +58,12 @@ try {
 function checkingLocalStorage(uEmail, uPassword) { // LoginMethod
 	// Primero obtenemos los datos almacenado en el localStorage
 
+	// Obtenemos los datos almacenados en el localStorage
 	let email = localStorage.getItem("email");
 	let password = localStorage.getItem("password");
 
+	// Comprobamos los datos almacenados en el localStorage, con los actuales que esta ingresando el usuario
+	// En los inputs del login form
 	if((email === uEmail && password === uPassword)) {
 		console.log("USER MATCH");
 		console.log(email);
@@ -86,7 +88,6 @@ if(lForm) {
 	
 		// Llamamos a la función que hicimos para verificar si los datos ya existen y le pasamos los datos
 		// que el usuario paso por los input, y se van a comparar en dicha función
-	
 		checkingLocalStorage(uEmail, uPassword);
 		window.location.href = 'index.html';
 	});
