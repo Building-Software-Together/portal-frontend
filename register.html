@@ -13,13 +13,14 @@
 		<!-- Style & Common Css --> 
 		<link rel="stylesheet" href="css/common.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/navbar.css">
 
     </head>
 	
     <body>
 	
 		<!-- Navigation Start  -->
-		<nav class="navbar navbar-default navbar-sticky bootsnav">
+		<nav class="navbar navbar-default navbar-sticky bootsnav navbarfixed">
 
 			<div class="container">      
 				<!-- Start Header Navigation -->
@@ -34,9 +35,9 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-							<li><a href="index.html">Home</a></li> 
+							<li><a id="thehome" href="#">Home</a></li>  
 							<li><a href="login.html">Login</a></li>
-							<li><a href="companies.html">Companies</a></li> 
+							<li><a id="companiesP" href="#">Companies</a></li> 
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse</a>
 								<ul class="dropdown-menu animated fadeOutUp" style="display: none; opacity: 1;">
@@ -69,6 +70,6 @@
 		<!-- login section End -->
 
 
-        <script src="js/main.js"></script>
+        <script src="js/main.js" type="module"></script>
     </body>
 </html>
