@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "md5": "^2.3.0"
+  }
 }
