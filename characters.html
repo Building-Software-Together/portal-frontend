@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- All Plugin Css -->
+    <link rel="stylesheet" href="css/plugins.css" />
+
+    <!-- Style & Common Css -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/apicharacters.css">
+    <title>Premium JOBS</title>
+    <style>
+      .characters {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Start  -->
+    <nav class="navbar navbar-default navbar-sticky bootsnav navbarfixed">
+      <div class="container">
+        <!-- Start Header Navigation -->
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#navbar-menu"
+          >
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand" href="index.html"
+            ><img src="img/logo.png" class="logo" alt=""
+          /></a>
+        </div>
+        <!-- End Header Navigation -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-menu">
+          <ul
+            class="nav navbar-nav navbar-right"
+            data-in="fadeInDown"
+            data-out="fadeOutUp"
+          >
+            <li id="thehome"><a href="#">Inicio</a></li>
+            <li id="session-li"><a href="#">Iniciar Sesión</a></li>
+            <li id="companiesP"><a href="#">Comapañias</a></li>
+            <li id="premium"><a href="#">Trabajos premium</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+    </nav>
+    <!-- Navigation End  -->
+    <section class="main-charactersx">
+      <ul id="allCharacters">
+      </ul>
+    </section>
+
+    <script>
+      const url = "https://jsonplaceholder.typicode.com/users";
+      const url2 = "https://rickandmortyapi.com/api/character";
+
+      fetch(url2)
+        .then((response) => response.json())
+        .then((data) => showData(data))
+        .catch((error) => console.error(error, "****** ERRORRR :/"))
+        .finally(console.log("Finished"));
+
+      const showData = (data) => {
+        console.log(data.results);
+        const charactersData = data.results;
+        let paintDataInHtml = '';
+        charactersData.map((cha, id) => {
+          //paintDataInHtml += `${cha.id} ${cha.name} ${cha.email}`
+          paintDataInHtml += `<div class='testt'> <li>${cha.id}</li> <li>${cha.name}</li> <li>${cha.status}</li> </div>`;
+
+          /* console.log(cha.id);
+          console.log(cha.name);
+          console.log(cha.email);
+          console.log("..........."); */
+        });
+        document.getElementById("allCharacters").innerHTML = paintDataInHtml;
+      };
+    </script>
+
+    <script type="module" src="js/main.js"></script>
+    <!-- <script type="module" src="js/api.js"></script> -->
+  </body>
+</html>

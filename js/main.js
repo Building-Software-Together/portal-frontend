@@ -1,21 +1,13 @@
-/* 
-$(document).ready(function(){
-			$("#testimonial-slider").owlCarousel({
-				items:1,
-				itemsDesktop:[1000,1],
-				itemsDesktopSmall:[979,1],
-				itemsTablet:[768,1],
-				pagination: true,
-				autoPlay:false
-			});
-		});	 
-*/
-
 //import md5 from 'md5.js';
+window.onload = init;
+
+function init() {
+	console.log("Page loaded")
+}
+
 
 
 // LocalStoarge
-
 // Register Method
 function addUserIntoLocalStorage(username, email, password) {
 
@@ -71,6 +63,7 @@ function checkingLocalStorage(uEmail, uPassword) { // LoginMethod
 		console.log("USER MATCH");
 		console.log(email);
 		console.log(password)
+		localStorage.setItem("isLogged", true);
 		window.location.href = 'index.html';
 	} else {
 		console.log("DOESN'T EXIST THE USER")
@@ -93,44 +86,64 @@ if (lForm) {
 	});
 }
 
+// Cerrar sesión del usuario
+/* let btnOutSession = document.getElementById("logoutS");
+btnOutSession.addEventListener("click", () => {
+
+	localStorage.setItem("isLogged", false);
+	return window.location.href = 'index.html';
+}) */
+
+
 
 // Method to change the user page
-function cambiarPagina(pag) {
-
-	// Rruta actual de la página
-	let ruta = window.location.href;
-	// Obtenemos la url del sitio actual, y al final le agregamos / y por ultimo 
-	// en el window.location.href, le agregamos la pagina que le pasamos como argumento al metodo
-	let carpeta = ruta.substring(0, ruta.lastIndexOf("/")) + "/";
-	// console.log(carpeta, "carpeta")
-	//console.log(pag)
-	// Cambiar la URL actual de la página a la nueva página especificada
-	window.location.href = carpeta + pag;
-	console.log("Called cambiarPagina fn");
-}
-
-// Metodo que llama a la pagina de registro
+// Nav with js
 const home = document.getElementById('thehome');
 const notAccount = document.getElementById('newAccount');
 const companies = document.getElementById('companiesP');
+const login = document.getElementById('session-li')
 
+const navigateTo = (url) => {
+  window.location.href = url;
+};
 
-if (notAccount) { // si existe algun boton todo esta ok, .:. ejecuta las siguientes funciones
-	notAccount.addEventListener('click', () => {
+login.addEventListener('click', () => {
+  navigateTo('login.html');
+});
 
-		cambiarPagina("register.html")
-		console.log("Clicked Navigation function")
-	});
+home.addEventListener('click', () => {
+  navigateTo('index.html');
+});
 
-	companies.addEventListener('click', ()=> {
-		cambiarPagina("companies.html")
-	})
-
-
-	home.addEventListener('click', ()=> {
-		cambiarPagina("index.html")
-	})
-	
+if (notAccount) {
+  notAccount.addEventListener('click', () => {
+    navigateTo('register.html');
+    console.log("Clicked Navigation function")
+  });
 }
 
-// Metodo 
+companies.addEventListener('click', () => {
+  navigateTo('companies.html');
+});
+// End method js nav
+
+// Metodo  para la pagina premium
+document.addEventListener('DOMContentLoaded', function () {
+	const PREMIUM = document.getElementById('premium');
+
+	let isLogged = localStorage.getItem("isLogged");
+	console.log(isLogged)
+	if(PREMIUM) {
+		PREMIUM.addEventListener('click', () => {
+			if(isLogged === 'true') {
+				console.log('USER LOGGED')
+				window.location.href = 'characters.html';
+			}else {
+				return window.location.href = 'register.html';
+			}
+	
+			console.log("Clicked PREMIUM");
+		})
+	}
+
+});
