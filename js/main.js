@@ -97,46 +97,35 @@ btnOutSession.addEventListener("click", () => {
 
 
 // Method to change the user page
-function cambiarPagina(pag) {
-
-	// Rruta actual de la página
-	let ruta = window.location.href;
-	// Obtenemos la url del sitio actual, y al final le agregamos / y por ultimo 
-	// en el window.location.href, le agregamos la pagina que le pasamos como argumento al metodo
-	let carpeta = ruta.substring(0, ruta.lastIndexOf("/")) + "/";
-	// console.log(carpeta, "carpeta")
-	//console.log(pag)
-	// Cambiar la URL actual de la página a la nueva página especificada
-	window.location.href = carpeta + pag;
-	console.log("Called cambiarPagina fn");
-}
-
-// Metodo que llama a la pagina de registro
+// Nav with js
 const home = document.getElementById('thehome');
 const notAccount = document.getElementById('newAccount');
 const companies = document.getElementById('companiesP');
 const login = document.getElementById('session-li')
 
+const navigateTo = (url) => {
+  window.location.href = url;
+};
+
 login.addEventListener('click', () => {
-	window.location.href = 'login.html';
+  navigateTo('login.html');
 });
 
 home.addEventListener('click', () => {
-	window.location.href = 'index.html';
+  navigateTo('index.html');
 });
 
-if(notAccount) {
-	notAccount.addEventListener('click', () => {
-	
-		window.location.href = 'register.html';
-		console.log("Clicked Navigation function")
-	});
+if (notAccount) {
+  notAccount.addEventListener('click', () => {
+    navigateTo('register.html');
+    console.log("Clicked Navigation function")
+  });
 }
 
 companies.addEventListener('click', () => {
-	window.location.href = 'companies.html';
-})
-
+  navigateTo('companies.html');
+});
+// End method js nav
 
 // Metodo  para la pagina premium
 document.addEventListener('DOMContentLoaded', function () {
