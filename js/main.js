@@ -1,21 +1,13 @@
-/* 
-$(document).ready(function(){
-			$("#testimonial-slider").owlCarousel({
-				items:1,
-				itemsDesktop:[1000,1],
-				itemsDesktopSmall:[979,1],
-				itemsTablet:[768,1],
-				pagination: true,
-				autoPlay:false
-			});
-		});	 
-*/
-
 //import md5 from 'md5.js';
+window.onload = init;
+
+function init() {
+	console.log("Page loaded")
+}
+
 
 
 // LocalStoarge
-
 // Register Method
 function addUserIntoLocalStorage(username, email, password) {
 
@@ -95,16 +87,12 @@ if (lForm) {
 }
 
 // Cerrar sesión del usuario
-let btnOutSession = document.getElementById("logoutS");
-btnOutSession.addEventListener("click", ()=> {
+/* let btnOutSession = document.getElementById("logoutS");
+btnOutSession.addEventListener("click", () => {
 
 	localStorage.setItem("isLogged", false);
 	return window.location.href = 'index.html';
-})
-
-
-
-
+}) */
 
 
 
@@ -127,24 +115,46 @@ function cambiarPagina(pag) {
 const home = document.getElementById('thehome');
 const notAccount = document.getElementById('newAccount');
 const companies = document.getElementById('companiesP');
+const login = document.getElementById('session-li')
 
+login.addEventListener('click', () => {
+	window.location.href = 'login.html';
+});
 
-if (notAccount) { // si existe algun boton todo esta ok, .:. ejecuta las siguientes funciones
+home.addEventListener('click', () => {
+	window.location.href = 'index.html';
+});
+
+if(notAccount) {
 	notAccount.addEventListener('click', () => {
-
-		cambiarPagina("register.html")
+	
+		window.location.href = 'register.html';
 		console.log("Clicked Navigation function")
 	});
-
-	companies.addEventListener('click', ()=> {
-		cambiarPagina("companies.html")
-	})
-
-
-	home.addEventListener('click', ()=> {
-		cambiarPagina("index.html")
-	})
-	
 }
 
-// Metodo 
+companies.addEventListener('click', () => {
+	window.location.href = 'companies.html';
+})
+
+
+// Metodo  para la pagina premium
+document.addEventListener('DOMContentLoaded', function () {
+	const PREMIUM = document.getElementById('premium');
+
+	let isLogged = localStorage.getItem("isLogged");
+	console.log(isLogged)
+	if(PREMIUM) {
+		PREMIUM.addEventListener('click', () => {
+			if(isLogged === 'true') {
+				console.log('USER LOGGED')
+				window.location.href = 'characters.html';
+			}else {
+				return window.location.href = 'register.html';
+			}
+	
+			console.log("Clicked PREMIUM");
+		})
+	}
+
+});
