@@ -71,6 +71,7 @@ function checkingLocalStorage(uEmail, uPassword) { // LoginMethod
 		console.log("USER MATCH");
 		console.log(email);
 		console.log(password)
+		localStorage.setItem("isLogged", true);
 		window.location.href = 'index.html';
 	} else {
 		console.log("DOESN'T EXIST THE USER")
@@ -92,6 +93,19 @@ if (lForm) {
 		checkingLocalStorage(uEmail, uPassword);
 	});
 }
+
+// Cerrar sesión del usuario
+let btnOutSession = document.getElementById("logoutS");
+btnOutSession.addEventListener("click", ()=> {
+
+	localStorage.setItem("isLogged", false);
+	return window.location.href = 'index.html';
+})
+
+
+
+
+
 
 
 // Method to change the user page
