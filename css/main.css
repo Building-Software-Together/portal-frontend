@@ -122,7 +122,7 @@ outline:none;
 border-right:1px solid rgba(107,121,124,0.3) !important;
 }
 .main-banner .btn.seub-btn{
-background:#da0833 ;
+background:#4561bd ;
 color:#ffffff;
 text-transform:uppercase;
 font-size:18px;
@@ -518,7 +518,7 @@ background:#cc68f3;
 background:#ff8f3e;
 }
 .brows-btn{
-background:#da0833 ;
+background:#4561bd;
 color:#ffffff;
 text-transform:uppercase;
 font-size:16px;
@@ -597,7 +597,7 @@ box-shadow: 0 5px 25px 0 rgba(0,0,0,.07);
 }
 
 .brows-btn{
-background:#da0833;
+background:#4561bd;
 color:#ffffff;
 text-transform:uppercase;
 font-size:16px;
@@ -713,7 +713,7 @@ background: #ef183c;
 }
 /*-----------------------counter Section start-------------------------*/
 .counter{
-background:#da0833;
+background:#4561bd;
 padding:60px 0;
 }
 
@@ -854,7 +854,7 @@ font-weight: 600;
     opacity: 0.7;
 }
 button.btn.btn-package {
-    background: #da0833;
+    background: #4561bd;
     color: #ffffff;
     text-transform: uppercase;
     padding: 10px 32px;
@@ -946,9 +946,9 @@ color:#ffffff;
     box-shadow: none;
 }
 .newsletter button.btn.btn-default {
-    background:#da0833;
+    background:#4561bd;
 	text-transform:uppercase;
-    border-color:#da0833;
+    border-color:#4561bd;
     color: #ffffff;
 }
 /*------login style---*/
@@ -1070,8 +1070,8 @@ footer button.btn.btn-primary {
     padding: 10px 0;
     text-align: center;
     text-transform: uppercase;
-    background: #da0833;
-    border: 1px solid #da0833;
+    background: #4561bd;
+    border: 1px solid #4561bd;
 }
 footer .form-control::-moz-placeholder{color:#8796a9;opacity:1}
 footer .form-control:-ms-input-placeholder{color:#8796a9}
