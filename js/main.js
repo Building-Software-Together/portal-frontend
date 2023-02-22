@@ -147,3 +147,28 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 });
+
+
+// Ocultar login y registro.
+function hideElementIfLogged() {
+	if (localStorage.getItem('isLogged') === 'true') {
+		const showElement = document.getElementById('logoutfrom')
+	  	const elementToHide = document.getElementById('session-li');
+	  	elementToHide.style.display = 'none';
+		showElement.style.display = 'block';
+	} else {
+		const showElement = document.getElementById('logoutfrom')
+		showElement.style.display = 'none';
+	}
+}
+hideElementIfLogged();
+
+// Cerrar sesión
+const showElement = document.getElementById('logoutfrom')
+
+showElement ? showElement.addEventListener('click', ()=> {
+	localStorage.removeItem('isLogged');
+
+	return window.location.href = 'index.html';
+	// console.log('Sesión eliminada.')
+}) : false;
