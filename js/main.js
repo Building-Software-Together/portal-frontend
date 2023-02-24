@@ -10,6 +10,37 @@ $(document).ready(function(){
 			});
 		});	 
 */
+// Slider
+
+window.addEventListener('load',function(){
+	console.log("el cotenido ha cargado");
+
+	var imagenes = [];
+
+	imagenes[0]= "img/cowork.png";
+	imagenes[1]= "img/office.jpg";
+	imagenes[2]= "img/keepmotivated.jpg";
+
+	var a = this.document.getElementById("slider");
+	
+	var indiceImagen = 0;
+	
+	function cambiarImagen(){
+		a.src= imagenes[indiceImagen];
+
+		if(indiceImagen<2){
+			indiceImagen++;
+		}else{
+			indiceImagen = 0;
+		}
+	}
+
+	setInterval(cambiarImagen,3000);
+	
+	
+	
+});
+
 
 
 // LocalStoarge
