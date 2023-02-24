@@ -9,6 +9,25 @@ Primary use:	Online Job Portal Theme
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+.btn-wsp{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    bottom: 50px;
+    right: 50px;
+    background: #0df053;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    z-index: 100;    
+}
+
+.wicon{
+    border-radius: 50%;
+}
+
+   
 body{
 background:#ffffff;
 font-family: 'Montserrat', sans-serif;
