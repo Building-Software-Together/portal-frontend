@@ -1,8 +1,8 @@
-//import md5 from 'md5.js';
 window.onload = init;
 
 function init() {
 	console.log("Page loaded")
+	hideElementIfLogged();
 }
 
 
@@ -14,7 +14,7 @@ function addUserIntoLocalStorage(username, email, password) {
 	// Almacenamos ahora los datos del usuario, los datos se pasan por los argumentos
 	localStorage.setItem("username", username);
 	localStorage.setItem("email", email);
-	localStorage.setItem("password", password);
+	localStorage.setItem("password", md5(password));
 
 	return console.log("USER ADDED");
 }
@@ -38,7 +38,7 @@ try {
 			//const password = md5(document.getElementById('password').value);
 
 			// Llamamos la funcion, que añade los datos al localStorage y le pasamos los datos que recibimos por input
-			addUserIntoLocalStorage(user, email, password);
+			addUserIntoLocalStorage(user, email, md5(password));
 
 			window.location.href = 'index.html'; // Redirigimos al index
 		});
@@ -59,9 +59,8 @@ function checkingLocalStorage(uEmail, uPassword) { // LoginMethod
 
 	// Comprobamos los datos almacenados en el localStorage, con los actuales que esta ingresando el usuario
 	// En los inputs del login form
-	if ((email === uEmail && password === uPassword)) {
+	if ((email === uEmail && password === md5(uPassword))) {
 		console.log("USER MATCH");
-		console.log(email);
 		console.log(password)
 		localStorage.setItem("isLogged", true);
 		window.location.href = 'index.html';
@@ -79,21 +78,13 @@ if (lForm) {
 		// Obtenemos los valores del input del login
 		let uEmail = document.getElementById('email').value;
 		let uPassword = document.getElementById('password').value;
+		let hashedPass = md5(uPassword);
 
 		// Llamamos a la función que hicimos para verificar si los datos ya existen y le pasamos los datos
 		// que el usuario paso por los input, y se van a comparar en dicha función
-		checkingLocalStorage(uEmail, uPassword);
+		checkingLocalStorage(uEmail, hashedPass);
 	});
 }
-
-// Cerrar sesión del usuario
-/* let btnOutSession = document.getElementById("logoutS");
-btnOutSession.addEventListener("click", () => {
-
-	localStorage.setItem("isLogged", false);
-	return window.location.href = 'index.html';
-}) */
-
 
 
 // Method to change the user page
@@ -127,7 +118,7 @@ companies.addEventListener('click', () => {
 });
 // End method js nav
 
-// Metodo  para la pagina premium
+// Metodo que comprueba si un usuario esta logeado
 document.addEventListener('DOMContentLoaded', function () {
 	const PREMIUM = document.getElementById('premium');
 
@@ -139,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				console.log('USER LOGGED')
 				window.location.href = 'characters.html';
 			}else {
+				console.log('You need an account')
 				return window.location.href = 'register.html';
 			}
 	
@@ -157,11 +149,12 @@ function hideElementIfLogged() {
 	  	elementToHide.style.display = 'none';
 		showElement.style.display = 'block';
 	} else {
-		const showElement = document.getElementById('logoutfrom')
-		showElement.style.display = 'none';
+		const showElement = document.getElementById('logoutfrom');
+		if(showElement) showElement.style.display = 'none';
+		
 	}
 }
-hideElementIfLogged();
+
 
 // Cerrar sesión
 const showElement = document.getElementById('logoutfrom')
