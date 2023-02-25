@@ -22,24 +22,58 @@ window.addEventListener('load',function(){
 	imagenes[2]= "img/keepmotivated.jpg";
 
 	var a = this.document.getElementById("slider");
-	
 	var indiceImagen = 0;
-	
 	function cambiarImagen(){
 		a.src= imagenes[indiceImagen];
 
-		if(indiceImagen<2){
-			indiceImagen++;
-		}else{
-			indiceImagen = 0;
-		}
+				if(indiceImagen<2){
+					indiceImagen++;
+					console.log("avanzó");
+				}else{
+					indiceImagen = 0;
+					
+					console.log("avanzó");
+				}
+			
 	}
 
-	setInterval(cambiarImagen,3000);
+	function cambiarImagenPrev(){
+		a.src=imagenes[indiceImagen];
+		if (indiceImagen>0){
+			indiceImagen--;
+			console.log("retrocedio");
+		}else{
+			indiceImagen = 2;
+			console.log("retrocedio")
+		}
+	}
+		
+
+		
 	
 	
 	
-});
+	setInterval(cambiarImagen,5000);
+
+	var btnnext = this.document.getElementById("next");
+	btnnext.addEventListener('click',cambiarImagen);
+
+	var btnprev = this.document.getElementById("prev");
+	btnprev.addEventListener('click',cambiarImagenPrev);
+		
+			
+		
+	});
+
+	
+	
+	
+	
+
+	 
+
+     
+
 
 
 
