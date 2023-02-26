@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* 
 $(document).ready(function(){
 			$("#testimonial-slider").owlCarousel({
@@ -75,14 +74,12 @@ window.addEventListener('load',function(){
 
      
 
-=======
 window.onload = init;
 
 function init() {
 	console.log("Page loaded")
 	hideElementIfLogged();
 }
->>>>>>> main
 
 
 
