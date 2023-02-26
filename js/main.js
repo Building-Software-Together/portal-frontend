@@ -90,7 +90,7 @@ try {
 
 			// Llamamos la funcion, que añade los datos al localStorage y le pasamos los datos que recibimos por input
 			addUserIntoLocalStorage(user, email, md5(password));
-
+			alert("Registrado con éxito.")
 			window.location.href = 'index.html'; // Redirigimos al index
 		});
 	}
@@ -114,8 +114,10 @@ function checkingLocalStorage(uEmail, uPassword) { // LoginMethod
 		console.log("USER MATCH");
 		console.log(password)
 		localStorage.setItem("isLogged", true);
+		alert("Logeado con éxito.")
 		window.location.href = 'index.html';
 	} else {
+		alert("Datos incorrectos.")
 		console.log("DOESN'T EXIST THE USER")
 	}
 }
