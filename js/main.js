@@ -1,17 +1,11 @@
-/* 
-$(document).ready(function(){
-			$("#testimonial-slider").owlCarousel({
-				items:1,
-				itemsDesktop:[1000,1],
-				itemsDesktopSmall:[979,1],
-				itemsTablet:[768,1],
-				pagination: true,
-				autoPlay:false
-			});
-		});	 
-*/
-// Slider
+window.onload = init;
 
+function init() {
+	console.log("Page loaded")
+	hideElementIfLogged();
+}
+
+// Slider
 window.addEventListener('load',function(){
 	console.log("el cotenido ha cargado");
 
@@ -22,68 +16,47 @@ window.addEventListener('load',function(){
 	imagenes[2]= "img/keepmotivated.jpg";
 
 
-	let a = this.document.getElementById("slider");
-	a.src = imagenes[0];
-	let indiceImagen = 1;
-	function cambiarImagen(){
-		a.src= imagenes[indiceImagen];
+	let a = document.getElementById("slider");
+	if (a) {
+		a.src = imagenes[0];
+		let indiceImagen = 1;
+		function cambiarImagen(){
+			a.src= imagenes[indiceImagen];
 
-				if(indiceImagen<2){
-					indiceImagen++;
-					console.log("avanzó");
-				}else{
-					indiceImagen = 0;
-					
-					console.log("avanzó");
-				}
-			
-	}
-
-	function cambiarImagenPrev(){
-		a.src=imagenes[indiceImagen];
-		if (indiceImagen>0){
-			indiceImagen--;
-			console.log("retrocedio");
-		}else{
-			indiceImagen = 2;
-			console.log("retrocedio")
+					if(indiceImagen<2){
+						indiceImagen++;
+						console.log("avanzó");
+					}else{
+						indiceImagen = 0;
+						
+						console.log("avanzó");
+					}
+				
 		}
-	}
-		
 
-		
-	
-	
-	
-	setInterval(cambiarImagen,5000);
-
-	var btnnext = this.document.getElementById("next");
-	btnnext.addEventListener('click',cambiarImagen);
-
-	var btnprev = this.document.getElementById("prev");
-	btnprev.addEventListener('click',cambiarImagenPrev);
-		
+		function cambiarImagenPrev(){
+			a.src=imagenes[indiceImagen];
+			if (indiceImagen>0){
+				indiceImagen--;
+				console.log("retrocedio");
+			}else{
+				indiceImagen = 2;
+				console.log("retrocedio")
+			}
+		}
 			
+
 		
-	});
+		setInterval(cambiarImagen,5000);
 
-	
-	
-	
-	
+		let btnnext = this.document.getElementById("next");
+		btnnext.addEventListener('click',cambiarImagen);
 
-	 
-
-     
-
-window.onload = init;
-
-function init() {
-	console.log("Page loaded")
-	hideElementIfLogged();
-}
-
-
+		let btnprev = this.document.getElementById("prev");
+		btnprev.addEventListener('click',cambiarImagenPrev);
+	}
+				
+});
 
 // LocalStoarge
 // Register Method
