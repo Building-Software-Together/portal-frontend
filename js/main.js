@@ -1,9 +1,88 @@
+<<<<<<< HEAD
+/* 
+$(document).ready(function(){
+			$("#testimonial-slider").owlCarousel({
+				items:1,
+				itemsDesktop:[1000,1],
+				itemsDesktopSmall:[979,1],
+				itemsTablet:[768,1],
+				pagination: true,
+				autoPlay:false
+			});
+		});	 
+*/
+// Slider
+
+window.addEventListener('load',function(){
+	console.log("el cotenido ha cargado");
+
+	var imagenes = [];
+
+	imagenes[0]= "img/cowork.png";
+	imagenes[1]= "img/office.jpg";
+	imagenes[2]= "img/keepmotivated.jpg";
+
+	var a = this.document.getElementById("slider");
+	var indiceImagen = 0;
+	function cambiarImagen(){
+		a.src= imagenes[indiceImagen];
+
+				if(indiceImagen<2){
+					indiceImagen++;
+					console.log("avanzó");
+				}else{
+					indiceImagen = 0;
+					
+					console.log("avanzó");
+				}
+			
+	}
+
+	function cambiarImagenPrev(){
+		a.src=imagenes[indiceImagen];
+		if (indiceImagen>0){
+			indiceImagen--;
+			console.log("retrocedio");
+		}else{
+			indiceImagen = 2;
+			console.log("retrocedio")
+		}
+	}
+		
+
+		
+	
+	
+	
+	setInterval(cambiarImagen,5000);
+
+	var btnnext = this.document.getElementById("next");
+	btnnext.addEventListener('click',cambiarImagen);
+
+	var btnprev = this.document.getElementById("prev");
+	btnprev.addEventListener('click',cambiarImagenPrev);
+		
+			
+		
+	});
+
+	
+	
+	
+	
+
+	 
+
+     
+
+=======
 window.onload = init;
 
 function init() {
 	console.log("Page loaded")
 	hideElementIfLogged();
 }
+>>>>>>> main
 
 
 
