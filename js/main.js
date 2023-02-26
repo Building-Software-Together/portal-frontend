@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* 
 $(document).ready(function(){
 			$("#testimonial-slider").owlCarousel({
@@ -16,14 +15,14 @@ $(document).ready(function(){
 window.addEventListener('load',function(){
 	console.log("el cotenido ha cargado");
 
-	var imagenes = [];
+	let imagenes = [];
 
 	imagenes[0]= "img/cowork.png";
 	imagenes[1]= "img/office.jpg";
 	imagenes[2]= "img/keepmotivated.jpg";
 
-	var a = this.document.getElementById("slider");
-	var indiceImagen = 0;
+	let a = this.document.getElementById("slider");
+	let indiceImagen = 0;
 	function cambiarImagen(){
 		a.src= imagenes[indiceImagen];
 
@@ -75,14 +74,12 @@ window.addEventListener('load',function(){
 
      
 
-=======
 window.onload = init;
 
 function init() {
 	console.log("Page loaded")
 	hideElementIfLogged();
 }
->>>>>>> main
 
 
 
