@@ -89,8 +89,8 @@ background:#f4f5f7;
 }
 .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
     color: #fff;
-    background-color: #da0833;
-    border-color: #da0833;
+    background-color: #4561bd;
+    border-color: #4561bd;
     text-transform: uppercase;
     border-radius: 2px;
     box-shadow: none;
@@ -1026,7 +1026,7 @@ section.login-wrapper img {
 .inner-banner{
 background-size:cover !important;
 background-position:center !important;
-padding:7% 0;
+padding:14% 0;
 position:relative;
 text-align:center;
 color:#ffffff;
