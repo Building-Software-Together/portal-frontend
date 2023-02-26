@@ -21,8 +21,10 @@ window.addEventListener('load',function(){
 	imagenes[1]= "img/office.jpg";
 	imagenes[2]= "img/keepmotivated.jpg";
 
+
 	let a = this.document.getElementById("slider");
-	let indiceImagen = 0;
+	a.src = imagenes[0];
+	let indiceImagen = 1;
 	function cambiarImagen(){
 		a.src= imagenes[indiceImagen];
 
