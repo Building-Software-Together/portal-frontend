@@ -118,7 +118,7 @@ try {
 			// Llamamos la funcion, que añade los datos al localStorage y le pasamos los datos que recibimos por input
 			addUserIntoLocalStorage(user, email, md5(password));
 
-			window.location.href = 'index.html'; // Redirigimos al index
+			window.location.href = 'login.html'; // Redirigimos al index
 		});
 	}
 } catch (error) {
