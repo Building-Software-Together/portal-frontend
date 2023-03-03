@@ -90,8 +90,8 @@ try {
 
 			// Llamamos la funcion, que añade los datos al localStorage y le pasamos los datos que recibimos por input
 			addUserIntoLocalStorage(user, email, md5(password));
-			alert("Registrado con éxito.")
-			window.location.href = 'index.html'; // Redirigimos al index
+			window.location.href = 'login.html'; // Redirigimos al login
+      alert("Registrado con éxito.")
 		});
 	}
 } catch (error) {
