@@ -17,7 +17,7 @@ window.addEventListener('load',function(){
 
 	let imagenes = [];
 
-	imagenes[0]= "img/cowork.png";
+	imagenes[0]= "img/cowork.jpg";
 	imagenes[1]= "img/office.jpg";
 	imagenes[2]= "img/keepmotivated.jpg";
 
