@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,10 @@
             btn_enviar.addEventListener("subimit", enviarDatos);
 
             function enviarDatos(e) {
+                var frm = new FormData(document.getElementById("login"))
+                console.log("Submitted")
                 e.preventDefault();
+
             }
         }
 
@@ -22,14 +25,14 @@
 </head>
 <body>
 
-<form action="grabar.php" method="post">
+<form id="login" action="grabar.php" method="post">
     <label for="usuario">
         <input type="text" name="usuario" id="usuario">
     </label>
     <label for="clave">
         <input type="password" name="clave" id="clave">
     </label>
-    <input type="submit" value="Enviar" id="enviar">
+    <input type="submit" value="Enviar" id="btnEnviar">
 </form>
     
 </body>
