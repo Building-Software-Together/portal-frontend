@@ -5,6 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script>
+        window.onload = init;
+
+        function init() {
+            btn_enviar = document.getElementById("btnEnviar");
+            btn_enviar.addEventListener("subimit", enviarDatos);
+
+            function enviarDatos(e) {
+                e.preventDefault();
+            }
+        }
+
+    </script>
 </head>
 <body>
 
@@ -15,7 +29,7 @@
     <label for="clave">
         <input type="password" name="clave" id="clave">
     </label>
-    <input type="submit" value="Enviar">
+    <input type="submit" value="Enviar" id="enviar">
 </form>
     
 </body>
